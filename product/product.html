@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #fefefe;
+      color: #000000;
+      
+    }
+
+    .header {
+      text-align: center;
+      background-color: #5f8ff0;
+      color: white;
+      padding: 1.5em 0;
+    }
+
+    .product-section {
+      padding: 1em;
+      text-align: center;
+    }
+
+    .main-image {
+      width: 60%;
+      max-width: 400px;
+      margin: 1em 0;
+      border-radius: 8px;
+    }
+
+    .gallery img {
+      width: 20%;
+      max-width: 100px;
+      margin: 0.5em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .details {
+      margin-top: 1em;
+    }
+
+    .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .cta {
+      background-color: #5f8ff0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 1em;
+      border-radius: 23px;
+    }
+
+    .cta:hover {
+      background-color: #5f8ff0;
+    }
+
+    .dynamic-card {
+      margin-top: 1em;
+      padding: 1em;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 23px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      margin-top: 2em;
+      text-align: center;
+      padding: 1em;
+      background-color: #333;
+      color: white;
+    }
+
+    footer a {
+      color: #5f8ff0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .social-media a {
+      display: inline-block;
+      margin-top: 0.5em;
+    }
+
+    @media (max-width: 768px) {
+      .main-image, .gallery img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>SHOES</h1>
+    <p>Salewa Mountain Trainer 2 GTX Trekking & Hiking Shoes</p>
+  </header>
+
+  <main>
+    <section class="product-section">
+      <img src="WhatsApp Image 2025-02-16 at 17.36.39 (1).jpeg" alt="Main Product Image" class="main-image">
+      <div class="gallery">
+        <img src="C:\Users\HARIPRIYAN .A\Desktop\product\WhatsApp Image 2025-02-16 at 17.36.37.jpeg"alt="Additional Image 1">
+        <img src="C:\Users\HARIPRIYAN .A\Desktop\product\WhatsApp Image 2025-02-16 at 17.36.38.jpeg" alt="Additional Image 2">
+        <img src="C:\Users\HARIPRIYAN .A\Desktop\product\WhatsApp Image 2025-02-16 at 17.36.39.jpeg" alt="Additional Image 3">
+      </div>
+      <div class="details">
+        <h2>Product Description</h2>
+        <p>The MS Mountain Trainer 2 GTX by Salewa is the ideal footwear for alpine terrain. Featuring a waterproof and breathable GORE-TEX® lining, these multisport shoes offer comfort and protection. The full-rubber coating and robust leather upper ensure durability and adaptability over time. With features like the Ortholite insole, Ferrata Zone for grip, deep lacing, and Vibram outsole, these shoes provide excellent cushioning, climbing performance, and comfortable movement on challenging paths</p>
+        <p class="price">Rs.1200/-</p>
+        <button id="buyNow" class="cta">Buy Now</button>
+      </div>
+    </section>
+
+   
+    <div id="newCardContainer"></div>
+
+    <footer>
+      <a href="#learnMore">Learn More</a> | 
+      <a href="#contact">Contact Us</a>
+      <div class="social-media">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    let cardAdded = false; 
+
+    document.getElementById("buyNow").addEventListener("click", function() {
+      if (!cardAdded) {
+        const newCardContainer = document.getElementById("newCardContainer");
+
+        const newCard = document.createElement("div");
+        newCard.classList.add("dynamic-card");
+
+        newCard.innerHTML = `
+          <h3>Product Added to Cart</h3>
+          <p>Product Name: Amazing Product</p>
+          <p>Price:Rs.1080/-</p>
+          <p>GST:Rs.120/-</p>
+          <p>Total price:Rs.1200/-</p>
+          <p>Thank you for your purchase!</p>
+          
+        `;
+
+        newCardContainer.appendChild(newCard);
+        cardAdded = true; // displays only one card
+      } else {
+        alert("Product already added to cart!");
+      }
+    });
+  </script>
+</body>
+</html>
